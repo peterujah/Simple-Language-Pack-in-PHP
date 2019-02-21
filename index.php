@@ -9,11 +9,14 @@
 	* I will give two example English and French
 	* First create a php file call "language_en.php" and "language_fr.php"
 */
-  session_start();
-	if(isset($_GET["lang"])){ $_SESSION["uselang"] = $_GET["lang"];}
-	$uselang = (isset($_SESSION["uselang"]) ? $_SESSION["uselang"] : "en");
-	include_once __DIR__ . "/language_".$uselang.".php";
- ?>
+
+session_start();
+if(isset($_GET["lang"])){ 
+	$_SESSION["uselang"] = $_GET["lang"];
+}
+$uselang = (isset($_SESSION["uselang"]) ? $_SESSION["uselang"] : "en");
+include_once __DIR__ . "/pack/language_".$uselang.".php";
+?>
 <!DOCTYPE html>
 <html>
 	<head>
